@@ -1,16 +1,12 @@
 import React, { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
-import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import gsap from "gsap";
-import MPLogo from "../images/MyLogo200x200.png"; // Import the logo
-import CenterImage from "../images/MariaPeters.png"; 
+import HomeHeader from '../components/HomeHeader'; // Import HomeHeader
 import Footer from '../components/Footer'; // Import Footer
+import CenterImage from "../images/MariaPeters.png"; // Import your center image
 
 function Home() {
   const imageRef = useRef(null);
   const borderRef = useRef(null);
-  const lineRef = useRef(null); // Ref for the line under the logo
-  const logoRef = useRef(null); // Ref for the logo (for bounce)
 
   useEffect(() => {
     // GSAP slide-in animation for the image
@@ -34,13 +30,6 @@ function Home() {
         { borderWidth: "4px", duration: 1, ease: "power2.out" }
       );
     }
-
-    // GSAP animation for the line under the logo
-    gsap.fromTo(
-      lineRef.current,
-      { width: "0%" },
-      { width: "100%", duration: 1, ease: "power2.out", delay: 0.5 }
-    );
   }, []);
 
   return (
@@ -48,51 +37,9 @@ function Home() {
       className="relative flex flex-col justify-center items-center w-screen bg-dark-blue text-light-gray p-8 overflow-hidden"
       style={{ height: "100vh" }} // Full viewport height
     >
-      {/* Logo in the upper left corner with bounce effect */}
-      <img
-        ref={logoRef} // Reference for bounce animation
-        src={MPLogo}
-        alt="MP Logo"
-        className="absolute top-0 left-0 cursor-pointer"
-        style={{ width: "400px", height: "200px" }} // Set custom width and height
-        onMouseEnter={() => gsap.to(logoRef.current, { y: -10, duration: 0.5, ease: "bounce.out" })}
-        onMouseLeave={() => gsap.to(logoRef.current, { y: 0, duration: 0.5, ease: "bounce.out" })}
-      />
+      {/* Import the HomeHeader */}
+      <HomeHeader />
 
-      {/* Horizontal line right under the logo */}
-      <hr
-        ref={lineRef} // Ref for the line animation
-        className="absolute top-[110px] left-0 border-0 border-t-2 border-[#545454]"
-        style={{ width: "100%" }} // Set to 100% width, but still animate
-      />
-
-      {/* Navigation Links in the upper right corner */}
-      <nav className="absolute top-12 right-12 flex space-x-4">
-        <Link
-          to="/about"
-          className="bg-light-gray text-dark-blue py-2 px-4 rounded-lg font-bold hover:bg-gray-300 transition"
-        >
-          About Me
-        </Link>
-        <Link
-          to="/projects"
-          className="bg-light-gray text-dark-blue py-2 px-4 rounded-lg font-bold hover:bg-gray-300 transition"
-        >
-          Projects
-        </Link>
-        <Link
-          to="/technologies"
-          className="bg-light-gray text-dark-blue py-2 px-4 rounded-lg font-bold hover:bg-gray-300 transition"
-        >
-          Technologies
-        </Link>
-        <Link
-          to="/contact"
-          className="bg-light-gray text-dark-blue py-2 px-4 rounded-lg font-bold hover:bg-gray-300 transition"
-        >
-          Contact Me
-        </Link>
-      </nav>
       {/* Centered Image with GSAP Slide-In Animation and Animated Border */}
       <div className="relative flex justify-center items-center mt-8">
         {/* Outer border */}
@@ -120,8 +67,9 @@ function Home() {
         <div className="sparkle" style={{ top: "20%", left: "80%" }}></div>
         <div className="sparkle" style={{ top: "70%", left: "40%" }}></div>
       </div>
+      
       {/* Footer Section */}
-      <Footer /> {/* Footer component imported and used */}
+      <Footer />
     </div>
   );
 }

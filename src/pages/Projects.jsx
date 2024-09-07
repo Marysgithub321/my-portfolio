@@ -1,57 +1,14 @@
 import React, { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap'; // Import GSAP for the bounce animation
-import MyLogo from '../images/MyLogo200x200.png'; // Import your logo
 import Footer from '../components/Footer'; // Import the Footer component
+import PageHeader from '../components/PageHeader'; // Import the PageHeader component
 
 function Projects() {
-  const logoRef = useRef(null);
-  const lineRef = useRef(null);
-
-  useEffect(() => {
-    // GSAP hover animation for logo bounce effect
-    if (logoRef.current) {
-      logoRef.current.addEventListener('mouseenter', () => {
-        gsap.to(logoRef.current, { y: -10, duration: 0.5, ease: 'bounce.out' });
-      });
-      logoRef.current.addEventListener('mouseleave', () => {
-        gsap.to(logoRef.current, { y: 0, duration: 0.5, ease: 'bounce.out' });
-      });
-    }
-
-    // GSAP animation for the line under the logo
-    gsap.fromTo(
-      lineRef.current,
-      { width: '0%' },
-      { width: '100%', duration: 1, ease: 'power2.out', delay: 0.5 }
-    );
-  }, []);
-
   return (
     <div className="relative flex flex-col items-center justify-start w-screen min-h-screen bg-dark-blue text-light-gray p-8 overflow-auto">
-      {/* Logo in the top-left corner with hover bounce */}
-      <img
-        ref={logoRef} // Reference for bounce effect
-        src={MyLogo}
-        alt="Logo"
-        className="absolute top-0 left-0 cursor-pointer"
-        style={{ width: '400px', height: '200px' }}
-      />
-
-      {/* Horizontal line right under the logo */}
-      <hr
-        ref={lineRef} // Ref for the line animation
-        className="absolute top-[110px] left-0 border-0 border-t-2 border-[#545454]"
-        style={{ width: '100%' }} // Line width
-      />
-
-      {/* Home Button in the top-right corner */}
-      <Link
-        to="/"
-        className="absolute top-12 right-12 bg-light-gray text-dark-blue py-2 px-4 rounded-lg font-bold hover:bg-gray-300 transition"
-      >
-        Home
-      </Link>
+      {/* Import the PageHeader */}
+      <PageHeader />
 
       {/* Projects Title - Moved further down */}
       <h1 className="text-4xl font-bold mt-24">Projects</h1> {/* Increased margin to push it lower */}
