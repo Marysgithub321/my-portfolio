@@ -49,7 +49,7 @@ function ContactMe() {
       {/* Home Button in the top-right corner */}
       <Link
         to="/"
-        className="absolute top-8 right-12 bg-light-gray text-dark-blue py-2 px-4 rounded-lg font-bold hover:bg-gray-300 transition"
+        className="absolute top-12 right-12 bg-light-gray text-dark-blue py-2 px-4 rounded-lg font-bold hover:bg-gray-300 transition"
       >
         Home
       </Link>

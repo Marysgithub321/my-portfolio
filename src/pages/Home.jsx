@@ -10,6 +10,7 @@ function Home() {
   const imageRef = useRef(null);
   const borderRef = useRef(null);
   const lineRef = useRef(null); // Ref for the line under the logo
+  const logoRef = useRef(null); // Ref for the logo (for bounce)
 
   useEffect(() => {
     // GSAP slide-in animation for the image
@@ -34,13 +35,12 @@ function Home() {
       );
     }
 
-    // Slide in animation for the line under the logo
+    // GSAP animation for the line under the logo
     gsap.fromTo(
       lineRef.current,
       { width: "0%" },
       { width: "100%", duration: 1, ease: "power2.out", delay: 0.5 }
     );
-
   }, []);
 
   return (
@@ -50,10 +50,13 @@ function Home() {
     >
       {/* Logo in the upper left corner with bounce effect */}
       <img
+        ref={logoRef} // Reference for bounce animation
         src={MPLogo}
         alt="MP Logo"
-        className="absolute top-0 left-0"
+        className="absolute top-0 left-0 cursor-pointer"
         style={{ width: "400px", height: "200px" }} // Set custom width and height
+        onMouseEnter={() => gsap.to(logoRef.current, { y: -10, duration: 0.5, ease: "bounce.out" })}
+        onMouseLeave={() => gsap.to(logoRef.current, { y: 0, duration: 0.5, ease: "bounce.out" })}
       />
 
       {/* Horizontal line right under the logo */}

@@ -40,16 +40,6 @@ function AboutMe() {
       );
     }
 
-    // GSAP hover animation for logo bounce effect
-    if (logoRef.current) {
-      logoRef.current.addEventListener("mouseenter", () => {
-        gsap.to(logoRef.current, { y: -10, duration: 0.5, ease: "bounce.out" });
-      });
-      logoRef.current.addEventListener("mouseleave", () => {
-        gsap.to(logoRef.current, { y: 0, duration: 0.5, ease: "bounce.out" });
-      });
-    }
-
     // GSAP animation for the line under the logo
     gsap.fromTo(
       lineRef.current,
@@ -65,21 +55,23 @@ function AboutMe() {
         ref={logoRef} // Reference for bounce effect
         src={MyLogo}
         alt="MP Logo"
-        className="absolute top-[-20px] left-[-20px] cursor-pointer" // Moved higher and to the left
+        className="absolute top-0 left-0 cursor-pointer"
         style={{ width: "400px", height: "200px" }}
+        onMouseEnter={() => gsap.to(logoRef.current, { y: -10, duration: 0.5, ease: "bounce.out" })}
+        onMouseLeave={() => gsap.to(logoRef.current, { y: 0, duration: 0.5, ease: "bounce.out" })}
       />
 
       {/* Horizontal line right under the logo */}
       <hr
         ref={lineRef} // Ref for the line animation
-        className="absolute top-[90px] left-0 border-0 border-t-2 border-[#545454]"
+        className="absolute top-[110px] left-0 border-0 border-t-2 border-[#545454]"
         style={{ width: "100%" }} // Line width
       />
 
       {/* Home Button in the top-right corner */}
       <Link
         to="/"
-        className="absolute top-8 right-12 bg-light-gray text-dark-blue py-2 px-4 rounded-lg font-bold hover:bg-gray-300 transition"
+        className="absolute top-12 right-12 bg-light-gray text-dark-blue py-2 px-4 rounded-lg font-bold hover:bg-gray-300 transition"
       >
         Home
       </Link>
@@ -130,13 +122,6 @@ function AboutMe() {
               <li><strong>Tamale Order Tracking App:</strong> Helps a small business owner manage customer orders and generate PDF order lists.</li>
             </ul>
           </div>
-
-          {/* Sparkle Effect Elements */}
-          <div className="sparkle" style={{ top: "30%", left: "30%" }}></div>
-          <div className="sparkle" style={{ top: "40%", left: "50%" }}></div>
-          <div className="sparkle" style={{ top: "60%", left: "70%" }}></div>
-          <div className="sparkle" style={{ top: "20%", left: "80%" }}></div>
-          <div className="sparkle" style={{ top: "70%", left: "40%" }}></div>
         </div>
       </div>
 

@@ -28,33 +28,36 @@ function Projects() {
   }, []);
 
   return (
-    <div className="relative flex flex-col items-center justify-center w-screen h-screen bg-dark-blue text-light-gray p-8">
+    <div className="relative flex flex-col items-center justify-start w-screen min-h-screen bg-dark-blue text-light-gray p-8 overflow-auto">
       {/* Logo in the top-left corner with hover bounce */}
       <img
         ref={logoRef} // Reference for bounce effect
         src={MyLogo}
         alt="Logo"
-        className="absolute top-0 left-0 -mt-4 -ml-4 cursor-pointer"
+        className="absolute top-0 left-0 cursor-pointer"
         style={{ width: '400px', height: '200px' }}
       />
 
       {/* Horizontal line right under the logo */}
       <hr
         ref={lineRef} // Ref for the line animation
-        className="absolute top-[90px] left-0 border-0 border-t-2 border-[#545454]"
+        className="absolute top-[110px] left-0 border-0 border-t-2 border-[#545454]"
         style={{ width: '100%' }} // Line width
       />
 
       {/* Home Button in the top-right corner */}
-      <Link to="/" className="absolute top-8 right-12 bg-light-gray text-dark-blue py-2 px-4 rounded-lg font-bold hover:bg-gray-300 transition">
+      <Link
+        to="/"
+        className="absolute top-12 right-12 bg-light-gray text-dark-blue py-2 px-4 rounded-lg font-bold hover:bg-gray-300 transition"
+      >
         Home
       </Link>
 
-      {/* Projects Title moved up by another 20px */}
-      <h1 className="text-4xl font-bold mt-12">Projects</h1> {/* Further reduced margin */}
+      {/* Projects Title - Moved further down */}
+      <h1 className="text-4xl font-bold mt-24">Projects</h1> {/* Increased margin to push it lower */}
 
-      {/* Projects cards moved up by another 20px */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-2 max-w-6xl">
+      {/* Projects cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8 max-w-6xl w-full p-4">
         {/* Project 1 */}
         <div className="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center">
           <h2 className="text-xl font-bold text-light-gray mb-4">Project 1 Title</h2>

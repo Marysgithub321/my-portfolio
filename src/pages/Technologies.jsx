@@ -37,19 +37,22 @@ function Technologies() {
         ref={logoRef} // Reference for bounce effect
         src={MyLogo}
         alt="Logo"
-        className="absolute top-0 left-0 -mt-4 -ml-4 cursor-pointer"
+        className="absolute top-0 left-0 cursor-pointer"
         style={{ width: '400px', height: '200px' }}
       />
 
       {/* Horizontal line right under the logo */}
       <hr
         ref={lineRef} // Ref for the line animation
-        className="absolute top-[90px] left-0 border-0 border-t-2 border-[#545454]"
+        className="absolute top-[110px] left-0 border-0 border-t-2 border-[#545454]"
         style={{ width: '100%' }} // Line width
       />
 
       {/* Home Button in the top-right corner */}
-      <Link to="/" className="absolute top-8 right-12 bg-light-gray text-dark-blue py-2 px-4 rounded-lg font-bold hover:bg-gray-300 transition">
+      <Link
+        to="/"
+        className="absolute top-12 right-12 bg-light-gray text-dark-blue py-2 px-4 rounded-lg font-bold hover:bg-gray-300 transition"
+      >
         Home
       </Link>
 
@@ -61,16 +64,16 @@ function Technologies() {
           I have worked extensively with a variety of technologies to create functional, responsive, and user-friendly applications:
         </p>
         <ul className="space-y-2 text-sm leading-snug">
-          <li><span className="font-bold">HTML & CSS:</span> Structured and styled numerous web applications, ensuring responsiveness and accessibility.</li>
-          <li><span className="font-bold">JavaScript (ES6+):</span> Implemented complex logic and interactive features in web applications.</li>
-          <li><span className="font-bold">React:</span> Built dynamic, component-based user interfaces with state management and routing.</li>
-          <li><span className="font-bold">Tailwind CSS:</span> Utilized utility-first CSS for fast and efficient styling.</li>
-          <li><span className="font-bold">GitHub:</span> Managed version control and collaborated with teams using Git and GitHub.</li>
-          <li><span className="font-bold">Vercel & Netlify:</span> Deployed websites and applications, using serverless functions and optimized builds for fast performance.</li>
-          <li><span className="font-bold">Electron:</span> Developed desktop applications using web technologies, bringing cross-platform compatibility to web apps.</li>
-          <li><span className="font-bold">VS Code:</span> My preferred development environment, customized with extensions to enhance productivity.</li>
-          <li><span className="font-bold">Canva & Photoshop:</span> Designed marketing materials, logos, and visual assets to enhance brand identity.</li>
-          <li><span className="font-bold">Figma:</span> Used for creating wireframes, prototypes, and UI designs to streamline the design-to-development workflow.</li>
+          <li><span className="font-bold">HTML & CSS:</span> <span className="font-normal">Structured and styled numerous web applications, ensuring responsiveness and accessibility.</span></li>
+          <li><span className="font-bold">JavaScript (ES6+):</span> <span className="font-normal">Implemented complex logic and interactive features in web applications.</span></li>
+          <li><span className="font-bold">React:</span> <span className="font-normal">Built dynamic, component-based user interfaces with state management and routing.</span></li>
+          <li><span className="font-bold">Tailwind CSS:</span> <span className="font-normal">Utilized utility-first CSS for fast and efficient styling.</span></li>
+          <li><span className="font-bold">GitHub:</span> <span className="font-normal">Managed version control and collaborated with teams using Git and GitHub.</span></li>
+          <li><span className="font-bold">Vercel & Netlify:</span> <span className="font-normal">Deployed websites and applications, using serverless functions and optimized builds for fast performance.</span></li>
+          <li><span className="font-bold">Electron:</span> <span className="font-normal">Developed desktop applications using web technologies, bringing cross-platform compatibility to web apps.</span></li>
+          <li><span className="font-bold">VS Code:</span> <span className="font-normal">My preferred development environment, customized with extensions to enhance productivity.</span></li>
+          <li><span className="font-bold">Canva & Photoshop:</span> <span className="font-normal">Designed marketing materials, logos, and visual assets to enhance brand identity.</span></li>
+          <li><span className="font-bold">Figma:</span> <span className="font-normal">Used for creating wireframes, prototypes, and UI designs to streamline the design-to-development workflow.</span></li>
         </ul>
       </div>
 
