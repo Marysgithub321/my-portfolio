@@ -1,11 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css'; // Import Tailwind CSS and other global styles
-import App from './App'; // Import the main App component
+import ReactDOM from 'react-dom/client';
+import './index.css';  // Make sure your CSS file is correctly imported
+import App from './App';
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')  // Ensure this matches the ID in index.html
+  </React.StrictMode>
 );

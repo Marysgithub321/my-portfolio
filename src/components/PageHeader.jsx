@@ -27,7 +27,7 @@ const PageHeader = () => {
   }, []);
 
   return (
-    <header className="absolute top-0 left-0 w-full flex flex-col items-center">
+    <header className="absolute top-0 left-0 w-full flex flex-col items-center bg-dark-blue z-50">
       {/* Logo in the top-left corner */}
       <Link to="/" className="absolute top-0 left-0">
         <img

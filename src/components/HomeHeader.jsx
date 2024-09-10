@@ -1,21 +1,21 @@
-import React, { useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useRef, useEffect, useState } from 'react';
 import gsap from 'gsap';
-import MyLogo from '../images/MyLogo200x200.png'; // Your logo
+import MyLogo from '../images/MyLogo200x200.png'; // Import your logo
 
 const HomeHeader = () => {
   const logoRef = useRef(null);
   const lineRef = useRef(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    // Animate the line when component mounts
+    // GSAP animation for the line under the logo
     gsap.fromTo(
       lineRef.current,
       { width: '0%' },
       { width: '100%', duration: 1, ease: 'power2.out', delay: 0.5 }
     );
 
-    // Add hover animation for the logo
+    // Logo hover animation
     if (logoRef.current) {
       logoRef.current.addEventListener('mouseenter', () => {
         gsap.to(logoRef.current, { y: -10, duration: 0.5, ease: 'bounce.out' });
@@ -26,42 +26,60 @@ const HomeHeader = () => {
     }
   }, []);
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
-    <header className="absolute top-0 left-0 w-full flex flex-col items-center">
-      <Link to="/" className="absolute top-0 left-0">
+    <header className="fixed top-0 left-0 w-full h-[120px] bg-dark-blue z-50 flex justify-between items-center px-6 lg:px-12">
+      {/* Logo */}
+      <a href="#home" className="flex items-center" style={{ marginTop: '45px' }}> {/* Moved the logo up by -12px */}
         <img
-          ref={logoRef} // Reference for the logo animation
+          ref={logoRef} // GSAP hover effect
           src={MyLogo}
           alt="Logo"
           className="cursor-pointer"
-          style={{ width: '400px', height: '200px' }}
+          style={{ width: '400px', height: '200px' }} // Smaller logo
         />
-      </Link>
+      </a>
 
-      {/* Line animation */}
+      {/* Line under the logo */}
       <hr
-        ref={lineRef} // Reference for the line animation
-        className="absolute top-[110px] left-0 border-0 border-t-2 border-[#545454]"
+        ref={lineRef}
+        className="absolute top-[90px] left-0 border-0 border-t-2 border-[#545454]"
         style={{ width: '100%' }}
       />
 
-      {/* Navigation */}
-      <nav className="absolute top-12 right-12 flex space-x-4">
-        <Link to="/about" className="bg-light-gray text-dark-blue py-2 px-4 rounded-lg font-bold hover:bg-gray-300 transition">
-          About Me
-        </Link>
-        <Link to="/projects" className="bg-light-gray text-dark-blue py-2 px-4 rounded-lg font-bold hover:bg-gray-300 transition">
-          Projects
-        </Link>
-        <Link to="/technologies" className="bg-light-gray text-dark-blue py-2 px-4 rounded-lg font-bold hover:bg-gray-300 transition">
-          Technologies
-        </Link>
-        <Link to="/contact" className="bg-light-gray text-dark-blue py-2 px-4 rounded-lg font-bold hover:bg-gray-300 transition">
-          Contact Me
-        </Link>
+      {/* Desktop Navigation (Visible on screens larger than 992px) */}
+      <nav className="hidden lg:flex space-x-4">
+        <a href="#about" className="bg-light-gray text-dark-blue py-2 px-4 rounded-lg font-bold hover:bg-gray-300 transition">About Me</a>
+        <a href="#projects" className="bg-light-gray text-dark-blue py-2 px-4 rounded-lg font-bold hover:bg-gray-300 transition">Projects</a>
+        <a href="#technologies" className="bg-light-gray text-dark-blue py-2 px-4 rounded-lg font-bold hover:bg-gray-300 transition">Technologies</a>
+        <a href="#contact" className="bg-light-gray text-dark-blue py-2 px-4 rounded-lg font-bold hover:bg-gray-300 transition">Contact Me</a>
       </nav>
+
+      {/* Hamburger Menu (Visible on screens smaller than 992px) */}
+      <div className="lg:hidden">
+        <button
+          onClick={toggleMobileMenu}
+          className="bg-light-gray text-dark-blue py-2 px-4 rounded-lg font-bold hover:bg-gray-300 transition"
+        >
+          ☰ {/* Hamburger icon */}
+        </button>
+      </div>
+
+      {/* Mobile Menu Dropdown */}
+      {isMobileMenuOpen && (
+        <nav className="absolute top-[120px] right-0 bg-dark-blue p-4 rounded-lg flex flex-col space-y-4 lg:hidden">
+          <a href="#about" className="text-light-gray hover:text-gray-300" onClick={() => setIsMobileMenuOpen(false)}>About Me</a>
+          <a href="#projects" className="text-light-gray hover:text-gray-300" onClick={() => setIsMobileMenuOpen(false)}>Projects</a>
+          <a href="#technologies" className="text-light-gray hover:text-gray-300" onClick={() => setIsMobileMenuOpen(false)}>Technologies</a>
+          <a href="#contact" className="text-light-gray hover:text-gray-300" onClick={() => setIsMobileMenuOpen(false)}>Contact Me</a>
+        </nav>
+      )}
     </header>
   );
 };
 
 export default HomeHeader;
+

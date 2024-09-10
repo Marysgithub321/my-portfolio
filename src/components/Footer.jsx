@@ -3,7 +3,7 @@ import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 
 function Footer() {
   return (
-    <footer className="absolute bottom-0 w-full flex flex-col justify-center items-center bg-light-gray text-dark-blue p-4">
+    <footer className="w-full flex flex-col justify-center items-center bg-light-gray text-dark-blue p-4">
       {/* Social icons in the bottom center */}
       <div className="flex space-x-4 mb-2">
         <a href="https://www.linkedin.com/in/maria-peters-5699b6327" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700">
