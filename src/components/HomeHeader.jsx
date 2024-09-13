@@ -46,7 +46,7 @@ const HomeHeader = () => {
       {/* Line under the logo */}
       <hr
         ref={lineRef}
-        className="absolute top-[90px] left-0 border-0 border-t-2 border-[#545454]"
+        className="absolute top-[100px] left-0 border-0 border-t-2 border-[#545454]"
         style={{ width: '100%' }}
       />
 

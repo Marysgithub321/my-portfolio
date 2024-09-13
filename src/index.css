@@ -5,8 +5,8 @@
 
 /* Custom global styles */
 :root {
-  --header-height: 120px; /* Adjusted header height */
-  --footer-height: 100px; /* Example footer height */
+  --header-height: 120px;
+  --footer-height: 100px;
   color-scheme: light dark;
   background-color: #242424;
   color: rgba(255, 255, 255, 0.87);
@@ -75,29 +75,16 @@ header {
   z-index: 50;
 }
 
-/* Sparkle effect animation */
-@keyframes sparkle {
-  0% {
-    opacity: 0;
-    transform: scale(0);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.2);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0);
+@media (max-width: 768px) {
+  header {
+    height: 80px; /* Smaller header height on mobile */
   }
 }
 
-.sparkle {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background: white;
-  border-radius: 50%;
-  animation: sparkle 2s infinite ease-in-out;
+@media (max-width: 480px) {
+  header {
+    height: 60px;
+  }
 }
 
 /* Responsive layout and header adjustments */
@@ -112,11 +99,11 @@ header {
 
   img {
     width: 100%;
+    height: auto;
   }
 
   header {
-    height: var(--header-height);
-    background-color: #1a1a1a;
+    height: 80px;
   }
 }
 
@@ -125,17 +112,7 @@ header {
     padding: 0.5rem;
   }
 
-  /* Fix for mobile screens */
   header {
-    height: 120px;
-  }
-
-  .lg\:hidden.absolute {
-    top: 45px;
-    right: 8px;
-  }
-
-  .max-w-lg {
-    max-width: 90%;
+    height: 60px;
   }
 }
