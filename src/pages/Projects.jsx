@@ -1,79 +1,148 @@
-import React, { useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import gsap from 'gsap'; // Import GSAP for the bounce animation
-import Footer from '../components/Footer'; // Import the Footer component
-import PageHeader from '../components/PageHeader'; // Import the PageHeader component
+import React from 'react';
+import { FaGithub } from 'react-icons/fa';
+import MyOrders from '../images/MyOrders.png';
+import shopLogo from '../images/shopLogo.png';
+import MyLogo from '../images/MyLogo.png';
+import Truss from '../images/Truss.png';
 
-function Projects() {
+const Projects = () => {
   return (
-    <div className="relative flex flex-col items-center justify-start w-screen min-h-screen bg-dark-blue text-light-gray p-8 overflow-auto">
-      {/* Import the PageHeader */}
-      <PageHeader />
+    <section
+      id="projects"
+      className="min-h-screen flex flex-col items-center justify-start px-4 sm:px-8"
+    >
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mt-8">
+        My Latest Projects
+      </h1>
 
-      {/* Projects Title - Moved further down */}
-      <h1 className="text-4xl font-bold mt-24">Projects</h1> {/* Increased margin to push it lower */}
-
-      {/* Projects cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8 max-w-6xl w-full p-4">
-        {/* Project 1 */}
-        <div className="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center">
-          <h2 className="text-xl font-bold text-light-gray mb-4">Project 1 Title</h2>
-          <div className="w-full h-40 bg-gray-600 rounded mb-4"></div>
-          <Link to="/project-1" className="bg-light-gray text-dark-blue py-2 px-4 rounded-lg font-bold hover:bg-gray-300 transition">
-            View Project
-          </Link>
+      {/* Project Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+        {/* Project 1: Tamale Order Tracker */}
+        <div className="card">
+          <img
+            src={MyOrders}
+            alt="Tamale Order Tracker"
+            className="card-img"
+          />
+          <h2>Tamale Order Tracker</h2>
+          <p>
+            The Tamale Order Tracker app helps manage food orders easily, with the ability to print PDF lists for pickup.
+          </p>
+          <div className="flex justify-center space-x-4">
+            <a
+              href="https://tamale-app-desktop.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Project
+            </a>
+            <a
+              href="https://github.com/Marysgithub321/tamale-app-desktop"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2"
+            >
+              <FaGithub />
+              <span>View Code</span>
+            </a>
+          </div>
         </div>
 
-        {/* Project 2 */}
-        <div className="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center">
-          <h2 className="text-xl font-bold text-light-gray mb-4">Project 2 Title</h2>
-          <div className="w-full h-40 bg-gray-600 rounded mb-4"></div>
-          <Link to="/project-2" className="bg-light-gray text-dark-blue py-2 px-4 rounded-lg font-bold hover:bg-gray-300 transition">
-            View Project
-          </Link>
+        {/* Project 2: Building Shops Estimator */}
+        <div className="card">
+          <img
+            src={shopLogo}
+            alt="Building Shops Estimator"
+            className="card-img"
+          />
+          <h2>Building Shops Estimator</h2>
+          <p>
+            Helps contractors quickly calculate project costs and generate material lists.
+          </p>
+          <div className="flex justify-center space-x-4">
+            <a
+              href="https://1drv.ms/u/s!AvelyWS0bAEulbhVs5bX2ckMdnMtTQ?e=yGilPg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Download Estimator
+            </a>
+            <a
+              href="https://github.com/Marysgithub321/Shop-Estimator.git"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2"
+            >
+              <FaGithub />
+              <span>View Code</span>
+            </a>
+          </div>
         </div>
 
-        {/* Project 3 */}
-        <div className="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center">
-          <h2 className="text-xl font-bold text-light-gray mb-4">Project 3 Title</h2>
-          <div className="w-full h-40 bg-gray-600 rounded mb-4"></div>
-          <Link to="/project-3" className="bg-light-gray text-dark-blue py-2 px-4 rounded-lg font-bold hover:bg-gray-300 transition">
-            View Project
-          </Link>
+        {/* Project 3: Portfolio Website */}
+        <div className="card">
+          <img
+            src={MyLogo}
+            alt="Portfolio Website"
+            className="card-img"
+          />
+          <h2>Portfolio Website</h2>
+          <p>
+            Built with React and Tailwind CSS, showcasing projects and technical skills.
+          </p>
+          <div className="flex justify-center space-x-4">
+            <a
+              href="https://your-portfolio-site.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Project
+            </a>
+            <a
+              href="https://github.com/Marysgithub321/my-portfolio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2"
+            >
+              <FaGithub />
+              <span>View Code</span>
+            </a>
+          </div>
         </div>
 
-        {/* Project 4 */}
-        <div className="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center">
-          <h2 className="text-xl font-bold text-light-gray mb-4">Project 4 Title</h2>
-          <div className="w-full h-40 bg-gray-600 rounded mb-4"></div>
-          <Link to="/project-4" className="bg-light-gray text-dark-blue py-2 px-4 rounded-lg font-bold hover:bg-gray-300 transition">
-            View Project
-          </Link>
-        </div>
-
-        {/* Project 5 */}
-        <div className="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center">
-          <h2 className="text-xl font-bold text-light-gray mb-4">Project 5 Title</h2>
-          <div className="w-full h-40 bg-gray-600 rounded mb-4"></div>
-          <Link to="/project-5" className="bg-light-gray text-dark-blue py-2 px-4 rounded-lg font-bold hover:bg-gray-300 transition">
-            View Project
-          </Link>
-        </div>
-
-        {/* Project 6 */}
-        <div className="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center">
-          <h2 className="text-xl font-bold text-light-gray mb-4">Project 6 Title</h2>
-          <div className="w-full h-40 bg-gray-600 rounded mb-4"></div>
-          <Link to="/project-6" className="bg-light-gray text-dark-blue py-2 px-4 rounded-lg font-bold hover:bg-gray-300 transition">
-            View Project
-          </Link>
+        {/* Project 4: Truss Estimator Application */}
+        <div className="card">
+          <img
+            src={Truss}
+            alt="Truss Estimator Application"
+            className="card-img"
+          />
+          <h2>Truss Estimator Application</h2>
+          <p>
+            Calculates project costs and generates detailed PDF estimates.
+          </p>
+          <div className="flex justify-center space-x-4">
+            <a
+              href="https://1drv.ms/u/s!AvelyWS0bAEulpIRMSGwQNVZ1ZD4kw?e=Y5WJMC"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Download Estimator
+            </a>
+            <a
+              href="https://github.com/Marysgithub321/Hidden-Truss"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2"
+            >
+              <FaGithub />
+              <span>View Code</span>
+            </a>
+          </div>
         </div>
       </div>
-
-      {/* Footer Section */}
-      <Footer />
-    </div>
+    </section>
   );
-}
+};
 
 export default Projects;

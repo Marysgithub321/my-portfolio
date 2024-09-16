@@ -1,22 +1,15 @@
-/* Import Tailwind's base, component, and utility styles */
+/* Import Tailwind's base, components, and utility styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Custom global styles */
+/* Global styles */
 :root {
   --header-height: 120px;
   --footer-height: 100px;
-  color-scheme: light dark;
   background-color: #242424;
   color: rgba(255, 255, 255, 0.87);
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -43,76 +36,117 @@ h1 {
   line-height: 1.1;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+/* Project card hover effect */
+.card {
+  background-color: #333;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-button:hover {
-  border-color: #646cff;
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-/* Fixed header with reduced height */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
+.card img {
   width: 100%;
-  height: var(--header-height);
-  background-color: #1a1a1a;
-  z-index: 50;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
 }
 
-@media (max-width: 768px) {
-  header {
-    height: 80px; /* Smaller header height on mobile */
+.card h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #d3d3d3;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #d3d3d3;
+  margin-bottom: 1rem;
+}
+
+.card a {
+  background-color: #d3d3d3;
+  color: #1a1a1a;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.card a:hover {
+  background-color: #a9a9a9;
+}
+
+/* Keyframes to move icons from the bottom left */
+@keyframes slideInFromBottomLeft {
+  0% {
+    transform: translate(-50px, 50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
   }
 }
 
-@media (max-width: 480px) {
-  header {
-    height: 60px;
-  }
+/* Base icon style */
+.icon-animation {
+  opacity: 0;
+  transform: translate(-50px, 50px);
+  animation: slideInFromBottomLeft 0.8s ease forwards;
 }
 
-/* Responsive layout and header adjustments */
-@media (max-width: 768px) {
-  .max-w-4xl {
-    max-width: 90%;
-  }
-
-  .p-8 {
-    padding: 1rem;
-  }
-
-  img {
-    width: 100%;
-    height: auto;
-  }
-
-  header {
-    height: 80px;
-  }
+/* Delays for staggered animations */
+.icon-animation-1 {
+  animation-delay: 0.1s;
 }
 
-@media (max-width: 480px) {
-  .p-8 {
-    padding: 0.5rem;
-  }
+.icon-animation-2 {
+  animation-delay: 0.3s;
+}
 
-  header {
-    height: 60px;
-  }
+.icon-animation-3 {
+  animation-delay: 0.5s;
+}
+
+.icon-animation-4 {
+  animation-delay: 0.7s;
+}
+
+.icon-animation-5 {
+  animation-delay: 0.9s;
+}
+
+.icon-animation-6 {
+  animation-delay: 1.1s;
+}
+
+.icon-animation-7 {
+  animation-delay: 1.3s;
+}
+
+.icon-animation-8 {
+  animation-delay: 1.5s;
+}
+
+.icon-animation-9 {
+  animation-delay: 1.7s;
+}
+
+.icon-animation-10 {
+  animation-delay: 1.9s;
+}
+
+.icon-animation-11 {
+  animation-delay: 2.1s;
+}
+
+.icon-animation-12 {
+  animation-delay: 2.3s;
 }

@@ -1,24 +1,25 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import { FaLinkedin, FaEnvelope } from 'react-icons/fa';
-import Footer from '../components/Footer'; // Import the Footer component
-import PageHeader from '../components/PageHeader'; // Import the PageHeader component
-import gsap from 'gsap'; // Import GSAP for the hover animation
+import useIntersectionObserver from '../hooks/useIntersectionObserver'; // Import the hook
 
-function ContactMe() {
-  useEffect(() => {
-    // GSAP animation if any extra animation is required for the page
-  }, []);
+const ContactMe = () => {
+  const [contactRef, contactVisible] = useIntersectionObserver({ threshold: 0.2 });
 
   return (
-    <div className="relative flex flex-col items-center justify-center w-screen h-screen bg-dark-blue text-light-gray p-8">
-      {/* Import the PageHeader */}
-      <PageHeader />
-
-      <h1 className="text-3xl font-bold mb-6">Contact Me</h1>
+    <section
+      id="contact"
+      ref={contactRef}
+      className={`relative flex flex-col items-center justify-center w-screen min-h-screen bg-dark-blue text-light-gray px-4 sm:px-8 pt-16 sm:pt-24 pb-16 sm:pb-24 transition duration-700 ease-in-out transform ${
+        contactVisible ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'
+      }`}
+    >
+      <h1 data-aos="fade-down" className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-center">
+        Contact Me
+      </h1>
 
       {/* Contact Form */}
       <form
-        action="https://formspree.io/f/xkgwepbq" // Your Formspree form URL
+        action="https://formspree.io/f/xkgwepbq"
         method="POST"
         className="w-full max-w-lg bg-gray-800 p-6 rounded-lg shadow-lg"
       >
@@ -63,8 +64,8 @@ function ContactMe() {
         </div>
         <div className="flex justify-center">
           <button
-            type="submit"
             className="bg-customBlue text-gray-700 font-bold py-2 px-4 rounded-lg hover:bg-gray-600 transition duration-300"
+            type="submit"
           >
             Send Message
           </button>
@@ -73,8 +74,7 @@ function ContactMe() {
 
       {/* Contact Info Links */}
       <div className="mt-8 flex space-x-6">
-        {/* LinkedIn */}
-        <a
+        <a data-aos="flip-up"
           href="https://www.linkedin.com/in/maria-peters-5699b6327"
           target="_blank"
           rel="noopener noreferrer"
@@ -82,21 +82,15 @@ function ContactMe() {
         >
           <FaLinkedin size={40} />
         </a>
-
-        {/* Email */}
-        <a
+        <a data-aos="flip-up"
           href="mailto:mp-developer@outlook.com"
           className="text-light-gray hover:text-customBlue transition"
         >
           <FaEnvelope size={40} />
         </a>
       </div>
-
-      {/* Footer Section */}
-      <Footer />
-    </div>
+    </section>
   );
-}
+};
 
 export default ContactMe;
-

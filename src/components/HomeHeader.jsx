@@ -59,7 +59,7 @@ const HomeHeader = () => {
       </nav>
 
       {/* Hamburger Menu (Visible on screens smaller than 992px) */}
-      <div className="lg:hidden">
+      <div data-aos="flip-left"className="lg:hidden">
         <button
           onClick={toggleMobileMenu}
           className="bg-light-gray text-dark-blue py-2 px-4 rounded-lg font-bold hover:bg-gray-300 transition"
