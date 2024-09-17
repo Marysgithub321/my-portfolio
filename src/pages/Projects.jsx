@@ -107,7 +107,7 @@ const Projects = () => {
           </p>
           <div className="flex justify-center space-x-4">
             <a
-              href="https://your-portfolio-site.com"
+              href="https://mpdev.ca/"
               target="_blank"
               rel="noopener noreferrer"
             >
