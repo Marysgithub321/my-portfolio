@@ -28,7 +28,7 @@ const ContactMe = () => {
             Name
           </label>
           <input
-            className="w-full p-3 text-gray-800 rounded-lg focus:outline-none"
+            className="w-full p-3 text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-customBlue"
             type="text"
             id="name"
             name="name"
@@ -41,7 +41,7 @@ const ContactMe = () => {
             Email
           </label>
           <input
-            className="w-full p-3 text-gray-800 rounded-lg focus:outline-none"
+            className="w-full p-3 text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-customBlue"
             type="email"
             id="email"
             name="email"
@@ -54,7 +54,7 @@ const ContactMe = () => {
             Message
           </label>
           <textarea
-            className="w-full p-3 text-gray-800 rounded-lg focus:outline-none"
+            className="w-full p-3 text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-customBlue"
             id="message"
             name="message"
             placeholder="Your message"
@@ -64,7 +64,7 @@ const ContactMe = () => {
         </div>
         <div className="flex justify-center">
           <button
-            className="bg-customBlue text-gray-700 font-bold py-2 px-4 rounded-lg hover:bg-gray-600 transition duration-300"
+            className="bg-customBlue text-gray-700 font-bold py-2 px-4 rounded-lg hover:bg-gray-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-customBlue"
             type="submit"
           >
             Send Message
@@ -74,7 +74,8 @@ const ContactMe = () => {
 
       {/* Contact Info Links */}
       <div className="mt-8 flex space-x-6">
-        <a data-aos="flip-up"
+        <a
+          data-aos="flip-up"
           href="https://www.linkedin.com/in/maria-peters-5699b6327"
           target="_blank"
           rel="noopener noreferrer"
@@ -82,7 +83,8 @@ const ContactMe = () => {
         >
           <FaLinkedin size={40} />
         </a>
-        <a data-aos="flip-up"
+        <a
+          data-aos="flip-up"
           href="mailto:mp-developer@outlook.com"
           className="text-light-gray hover:text-customBlue transition"
         >

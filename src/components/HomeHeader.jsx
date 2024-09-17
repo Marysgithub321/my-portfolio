@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import gsap from 'gsap';
-import MyLogo from '../images/MyLogo200x200.png'; // Import your logo
+import MyLogo from '../images/MyLogo200x200.webp'; // Import your logo
 
 const HomeHeader = () => {
   const logoRef = useRef(null);
@@ -33,13 +33,14 @@ const HomeHeader = () => {
   return (
     <header className="fixed top-0 left-0 w-full h-[120px] bg-dark-blue z-50 flex justify-between items-center px-6 lg:px-12">
       {/* Logo */}
-      <a href="#home" className="flex items-center" style={{ marginTop: '45px' }}> {/* Moved the logo up by -12px */}
+      <a href="#home" className="flex items-center" style={{ marginTop: '45px' }}>
         <img
           ref={logoRef} // GSAP hover effect
           src={MyLogo}
           alt="Logo"
+          width="400" // Explicitly setting width
+          height="200" // Explicitly setting height
           className="cursor-pointer"
-          style={{ width: '400px', height: '200px' }} // Smaller logo
         />
       </a>
 
@@ -50,7 +51,7 @@ const HomeHeader = () => {
         style={{ width: '100%' }}
       />
 
-      {/* Desktop Navigation (Visible on screens larger than 992px) */}
+      {/* Desktop Navigation */}
       <nav className="hidden lg:flex space-x-4">
         <a href="#about" className="bg-light-gray text-dark-blue py-2 px-4 rounded-lg font-bold hover:bg-gray-300 transition">About Me</a>
         <a href="#projects" className="bg-light-gray text-dark-blue py-2 px-4 rounded-lg font-bold hover:bg-gray-300 transition">Projects</a>
@@ -58,13 +59,13 @@ const HomeHeader = () => {
         <a href="#contact" className="bg-light-gray text-dark-blue py-2 px-4 rounded-lg font-bold hover:bg-gray-300 transition">Contact Me</a>
       </nav>
 
-      {/* Hamburger Menu (Visible on screens smaller than 992px) */}
-      <div data-aos="flip-left"className="lg:hidden">
+      {/* Hamburger Menu */}
+      <div data-aos="flip-left" className="lg:hidden">
         <button
           onClick={toggleMobileMenu}
           className="bg-light-gray text-dark-blue py-2 px-4 rounded-lg font-bold hover:bg-gray-300 transition"
         >
-          ☰ {/* Hamburger icon */}
+          ☰
         </button>
       </div>
 
@@ -82,4 +83,3 @@ const HomeHeader = () => {
 };
 
 export default HomeHeader;
-

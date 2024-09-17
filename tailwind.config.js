@@ -9,7 +9,6 @@ export default {
       colors: {
         'dark-blue': '#001f3f',
         'light-gray': '#d3d3d3',
-        'customGray': '#545454',
       },
       animation: {
         fadeIn: "fadeIn 2s ease-in forwards",

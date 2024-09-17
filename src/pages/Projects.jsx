@@ -1,9 +1,9 @@
 import React from 'react';
 import { FaGithub } from 'react-icons/fa';
-import MyOrders from '../images/MyOrders.png';
-import shopLogo from '../images/shopLogo.png';
-import MyLogo from '../images/MyLogo.png';
-import Truss from '../images/Truss.png';
+import MyOrders from '../images/MyOrders.webp';
+import shopLogo from '../images/shopLogo.webp';
+import MyLogo from '../images/MyLogo.webp';
+import Truss from '../images/Truss.webp';
 
 const Projects = () => {
   return (
@@ -19,11 +19,16 @@ const Projects = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
         {/* Project 1: Tamale Order Tracker */}
         <div className="card">
-          <img
-            src={MyOrders}
-            alt="Tamale Order Tracker"
-            className="card-img"
-          />
+          <div className="aspect-ratio-box">
+            <img
+              src={MyOrders}
+              alt="Tamale Order Tracker"
+              width="400"
+              height="300"
+              className="card-img"
+              loading="lazy"
+            />
+          </div>
           <h2>Tamale Order Tracker</h2>
           <p>
             The Tamale Order Tracker app helps manage food orders easily, with the ability to print PDF lists for pickup.
@@ -50,11 +55,16 @@ const Projects = () => {
 
         {/* Project 2: Building Shops Estimator */}
         <div className="card">
-          <img
-            src={shopLogo}
-            alt="Building Shops Estimator"
-            className="card-img"
-          />
+          <div className="aspect-ratio-box">
+            <img
+              src={shopLogo}
+              alt="Building Shops Estimator"
+              width="400"
+              height="300"
+              className="card-img"
+              loading="lazy"
+            />
+          </div>
           <h2>Building Shops Estimator</h2>
           <p>
             Helps contractors quickly calculate project costs and generate material lists.
@@ -81,11 +91,16 @@ const Projects = () => {
 
         {/* Project 3: Portfolio Website */}
         <div className="card">
-          <img
-            src={MyLogo}
-            alt="Portfolio Website"
-            className="card-img"
-          />
+          <div className="aspect-ratio-box">
+            <img
+              src={MyLogo}
+              alt="Portfolio Website"
+              width="400"
+              height="300"
+              className="card-img"
+              loading="lazy"
+            />
+          </div>
           <h2>Portfolio Website</h2>
           <p>
             Built with React and Tailwind CSS, showcasing projects and technical skills.
@@ -112,11 +127,16 @@ const Projects = () => {
 
         {/* Project 4: Truss Estimator Application */}
         <div className="card">
-          <img
-            src={Truss}
-            alt="Truss Estimator Application"
-            className="card-img"
-          />
+          <div className="aspect-ratio-box">
+            <img
+              src={Truss}
+              alt="Truss Estimator Application"
+              width="400"
+              height="300"
+              className="card-img"
+              loading="lazy"
+            />
+          </div>
           <h2>Truss Estimator Application</h2>
           <p>
             Calculates project costs and generates detailed PDF estimates.

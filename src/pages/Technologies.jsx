@@ -3,21 +3,18 @@ import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaGithub } from 'react-icons/f
 import { SiTailwindcss, SiNetlify, SiElectron, SiVisualstudiocode, SiFigma, SiAdobephotoshop } from 'react-icons/si';
 import vercel_logo from '../images/vercel_logo.png';
 
-
-
-
 const Technologies = () => {
   return (
     <section
       id="technologies"
       className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-8"
     >
-      <h1 data-aos="flip-right"className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6 mt-8">
+      <h1 data-aos="flip-right" className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6 mt-8">
         Technologies I Work With
       </h1>
 
       <div className="bg-light-gray text-dark-blue p-6 rounded-lg shadow-lg w-4/5 mb-8">
-        <p data-aos="fade-right"className="text-lg mb-4 text-center font-semibold">
+        <p data-aos="fade-right" className="text-lg mb-4 text-center font-semibold">
           I have worked extensively with a variety of technologies:
         </p>
         <ul className="space-y-2 text-sm leading-snug">
@@ -58,8 +55,9 @@ const Technologies = () => {
         <img
           src={vercel_logo}
           alt="Vercel Logo"
+          width="50"  // Explicitly define width
+          height="50" // Explicitly define height
           className="icon-animation icon-animation-12"
-          style={{ width: '50px', height: '50px' }}
         />
       </div>
     </section>

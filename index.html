@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Welcome to my portfolio. I am a web developer showcasing my projects, skills, and experience." />
+    <meta name="keywords" content="Web Developer, Portfolio, JavaScript, React, Projects, Skills, Front-End Developer" />
+    <meta name="author" content="Maria Peters" />
+
+    <!-- Preload important assets -->
+    <link rel="preload" href="/src/images/favicon.ico" as="image" />
+    <link rel="preload" href="/path/to/font.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+
+    <!-- SEO and Social Sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://your-portfolio.com/" />
+    <meta property="og:title" content="Maria Peters - Web Developer" />
+    <meta property="og:description" content="Welcome to my portfolio. I am a web developer showcasing my projects, skills, and experience." />
+    <meta property="og:image" content="/src/images/og-image.jpg" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://your-portfolio.com/" />
+    <meta property="twitter:title" content="Maria Peters - Web Developer" />
+    <meta property="twitter:description" content="Welcome to my portfolio. I am a web developer showcasing my projects, skills, and experience." />
+    <meta property="twitter:image" content="/src/images/twitter-image.jpg" />
+
+    <link rel="icon" href="/src/images/favicon.ico" />
     <title>My Portfolio</title>
-  </head>
-  <body>
+
+    <!-- Defer JavaScript -->
+    <script type="module" src="/src/index.jsx" defer></script>
+</head>
+<body>
     <div id="root"></div> <!-- This is where React will render your app -->
-    <script type="module" src="/src/index.jsx"></script>
-  </body>
+</body>
 </html>
