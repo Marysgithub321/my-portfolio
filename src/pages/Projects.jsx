@@ -1,9 +1,9 @@
 import React from 'react';
 import { FaGithub } from 'react-icons/fa';
 import MyOrders from '../images/MyOrders.webp';
-import shopLogo from '../images/shopLogo.webp';
+import shopLogo from '../images/ShopLogo.png';
 import MyLogo from '../images/MyLogo.webp';
-import Truss from '../images/Truss.webp';
+import Truss from '../images/TrussProject.png';
 
 const Projects = () => {
   return (
