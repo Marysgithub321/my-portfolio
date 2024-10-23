@@ -15,22 +15,21 @@ const AboutMe = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.5 }}
-        className="flex flex-col items-center justify-center px-4 sm:px-8 pt-12"
-        style={{ maxHeight: '500px' }} // Set maximum height for the section
+        // Use responsive margin-top to control spacing below the header
+        className="flex flex-col items-center justify-center px-4 sm:px-32 mt-[80px] sm:mt-[80px] pt-8"
       >
         <div className="flex justify-center items-center w-full p-8">
-          {/* Limit the Hero image height */}
+          {/* Adjust image height and width while keeping the aspect ratio */}
           <img
             data-aos="zoom-in"
             src={Hero}
             alt="About Me"
-            className="w-full h-full object-cover rounded-lg"
+            className="w-full max-h-[700px] object-cover rounded-lg"
             loading="lazy"
-            style={{ maxHeight: '600px' }} // Set maximum height for the image
           />
         </div>
 
-        <div className="flex items-center justify-center space-x-6 p-8">
+        <div className="flex items-center justify-center space-x-6 p-0 mb-[100px]">
           <a
             href="https://www.linkedin.com/in/maria-peters-5699b6327"
             target="_blank"

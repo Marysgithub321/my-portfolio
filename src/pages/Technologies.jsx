@@ -9,7 +9,7 @@ const Technologies = () => {
       id="technologies"
       className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-8"
     >
-      <h1 data-aos="flip-right" className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6 mt-8">
+      <h1 data-aos="flip-right" className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 mt-13">
         Technologies I Work With
       </h1>
 

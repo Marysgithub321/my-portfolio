@@ -166,38 +166,39 @@ const Projects = () => {
           </div>
         </div>
         {/* Project 5: Truss Estimator Application */}
-        <div className="card">
-          <div className="aspect-ratio-box">
-            <img
-              src={Truss}
-              alt="Truss Estimator Application"
-              width="400"
-              height="300"
-              className="card-img"
-              loading="lazy"
-            />
-          </div>
-          <h2>Truss Estimator Application</h2>
-          <p>Calculates project costs and generates detailed PDF estimates.</p>
-          <div className="flex justify-center space-x-4">
-            <a
-              href="https://1drv.ms/u/s!AvelyWS0bAEulpIRMSGwQNVZ1ZD4kw?e=Y5WJMC"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Download Estimator
-            </a>
-            <a
-              href="https://github.com/Marysgithub321/Hidden-Truss"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center space-x-2"
-            >
-              <FaGithub />
-              <span>View Code</span>
-            </a>
-          </div>
-        </div>
+<div className="card mb-[50px]"> {/* Added bottom margin */}
+  <div className="aspect-ratio-box">
+    <img
+      src={Truss}
+      alt="Truss Estimator Application"
+      width="400"
+      height="300"
+      className="card-img"
+      loading="lazy"
+    />
+  </div>
+  <h2>Truss Estimator Application</h2>
+  <p>Calculates project costs and generates detailed PDF estimates.</p>
+  <div className="flex justify-center space-x-4">
+    <a
+      href="https://1drv.ms/u/s!AvelyWS0bAEulpIRMSGwQNVZ1ZD4kw?e=Y5WJMC"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Download Estimator
+    </a>
+    <a
+      href="https://github.com/Marysgithub321/Hidden-Truss"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center space-x-2"
+    >
+      <FaGithub />
+      <span>View Code</span>
+    </a>
+  </div>
+</div>
+
       </div>
     </section>
   );
