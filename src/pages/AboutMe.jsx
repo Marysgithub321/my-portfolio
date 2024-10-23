@@ -1,10 +1,11 @@
 import React, { Suspense } from 'react';
 import Hero from '../images/Hero.webp';
-// Corrected import for react-icons
 import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 
 // Lazy-load Framer Motion
-const MotionSection = React.lazy(() => import('framer-motion').then((mod) => ({ default: mod.motion.section })));
+const MotionSection = React.lazy(() =>
+  import('framer-motion').then((mod) => ({ default: mod.motion.section }))
+);
 
 const AboutMe = () => {
   return (
@@ -14,18 +15,18 @@ const AboutMe = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.5 }}
-        className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-8 pt-32"
+        className="flex flex-col items-center justify-center px-4 sm:px-8 pt-12"
+        style={{ maxHeight: '500px' }} // Set maximum height for the section
       >
         <div className="flex justify-center items-center w-full p-8">
-          {/* Lazy-load the Hero image and define dimensions */}
+          {/* Limit the Hero image height */}
           <img
             data-aos="zoom-in"
             src={Hero}
             alt="About Me"
-            width="1200"  // Define image width (for example, adjust based on actual dimensions)
-            height="800"  // Define image height (for example, adjust based on actual dimensions)
-            className="w-full h-auto object-cover rounded-lg"
+            className="w-full h-full object-cover rounded-lg"
             loading="lazy"
+            style={{ maxHeight: '600px' }} // Set maximum height for the image
           />
         </div>
 
