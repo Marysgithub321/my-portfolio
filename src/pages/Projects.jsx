@@ -181,14 +181,14 @@ const Projects = () => {
   <p>Calculates project costs and generates detailed PDF estimates.</p>
   <div className="flex justify-center space-x-4">
     <a
-      href="https://1drv.ms/u/s!AvelyWS0bAEulpIRMSGwQNVZ1ZD4kw?e=Y5WJMC"
+      href="https://tru-span.vercel.app/"
       target="_blank"
       rel="noopener noreferrer"
     >
-      Download Estimator
+      View Project
     </a>
     <a
-      href="https://github.com/Marysgithub321/Hidden-Truss"
+      href="https://github.com/Marysgithub321/TruSpan"
       target="_blank"
       rel="noopener noreferrer"
       className="flex items-center space-x-2"
