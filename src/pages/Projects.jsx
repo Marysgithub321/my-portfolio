@@ -74,14 +74,14 @@ const Projects = () => {
           </p>
           <div className="flex justify-center space-x-4">
             <a
-              href="https://1drv.ms/u/s!AvelyWS0bAEulbhVs5bX2ckMdnMtTQ?e=yGilPg"
+              href="https://solid-structure.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Download Estimator
+              View Project
             </a>
             <a
-              href="https://github.com/Marysgithub321/Shop-Estimator.git"
+              href="https://github.com/Marysgithub321/SolidStructure"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-2"
