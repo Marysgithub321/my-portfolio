@@ -148,14 +148,14 @@ const Projects = () => {
           </p>
           <div className="flex justify-center space-x-4">
             <a
-              href="https://leap-app-alpha.vercel.app/"
+              href="https://prime-finish.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
             >
               View Project
             </a>
             <a
-              href="https://github.com/Marysgithub321/leap-jobs"
+              href="https://github.com/Marysgithub321/prime-finish"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-2"
