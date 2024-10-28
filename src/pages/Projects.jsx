@@ -70,7 +70,7 @@ const projectData = [
   {
     title: "Building Shops Estimator",
     description:
-      "Helps contractors quickly calculate project costs and generate material lists.",
+      "Helps contractors quickly calculate project costs and generate material lists and estimates.",
     image: shopLogo,
     projectLink: "https://solid-structure.vercel.app/",
     codeLink: "https://github.com/Marysgithub321/SolidStructure",
