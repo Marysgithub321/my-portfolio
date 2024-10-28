@@ -18,190 +18,87 @@ const Projects = () => {
 
       {/* Project Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-        {/* Project 1: Tamale Order Tracker */}
-        <div className="card">
-          <div className="aspect-ratio-box">
-            <img
-              src={MyOrders}
-              alt="Tamale Order Tracker"
-              width="400"
-              height="300"
-              className="card-img"
-              loading="lazy"
-            />
+        {projectData.map((project, index) => (
+          <div key={index} className="card flex flex-col">
+            {/* Aspect Ratio Container */}
+            <div className="aspect-w-4 aspect-h-3 overflow-hidden">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <h2 className="mt-4 text-xl font-semibold">{project.title}</h2>
+            <p className="mt-2">{project.description}</p>
+            <div className="flex justify-center space-x-4 mt-auto">
+              <a
+                href={project.projectLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 hover:underline"
+              >
+                View Project
+              </a>
+              <a
+                href={project.codeLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 text-blue-500 hover:underline"
+              >
+                <FaGithub />
+                <span>View Code</span>
+              </a>
+            </div>
           </div>
-          <h2>Tamale Order Tracker</h2>
-          <p>
-            The Tamale Order Tracker app helps manage food orders easily, with
-            the ability to print PDF lists for pickup.
-          </p>
-          <div className="flex justify-center space-x-4">
-            <a
-              href="https://tamale-app-desktop.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Project
-            </a>
-            <a
-              href="https://github.com/Marysgithub321/tamale-app-desktop"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center space-x-2"
-            >
-              <FaGithub />
-              <span>View Code</span>
-            </a>
-          </div>
-        </div>
-
-        {/* Project 2: Building Shops Estimator */}
-        <div className="card">
-          <div className="aspect-ratio-box">
-            <img
-              src={shopLogo}
-              alt="Building Shops Estimator"
-              width="400"
-              height="300"
-              className="card-img"
-              loading="lazy"
-            />
-          </div>
-          <h2>Building Shops Estimator</h2>
-          <p>
-            Helps contractors quickly calculate project costs and generate
-            material lists.
-          </p>
-          <div className="flex justify-center space-x-4">
-            <a
-              href="https://solid-structure.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Project
-            </a>
-            <a
-              href="https://github.com/Marysgithub321/SolidStructure"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center space-x-2"
-            >
-              <FaGithub />
-              <span>View Code</span>
-            </a>
-          </div>
-        </div>
-
-        {/* Project 3: Portfolio Website */}
-        <div className="card">
-          <div className="aspect-ratio-box">
-            <img
-              src={MyLogo}
-              alt="Portfolio Website"
-              width="400"
-              height="300"
-              className="card-img"
-              loading="lazy"
-            />
-          </div>
-          <h2>Portfolio Website</h2>
-          <p>
-            Built with React and Tailwind CSS, showcasing projects and technical
-            skills.
-          </p>
-          <div className="flex justify-center space-x-4">
-            <a
-              href="https://mpdev.ca/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Project
-            </a>
-            <a
-              href="https://github.com/Marysgithub321/my-portfolio"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center space-x-2"
-            >
-              <FaGithub />
-              <span>View Code</span>
-            </a>
-          </div>
-        </div>
-        {/* Project 4: Prime Finishes Painting */}
-        <div className="card">
-          <div className="aspect-ratio-box">
-            <img
-              src={PrimeFinishLogo}
-              alt="Prime Finish Painting"
-              width="400"
-              height="300"
-              className="card-img"
-              loading="lazy"
-            />
-          </div>
-          <h2>Prime Finish Painting</h2>
-          <p>
-            This app is for creating invoices, estimates, tracking job progress,
-            managing expenses, and tracking contractor payments efficiently
-            for a painting company.
-          </p>
-          <div className="flex justify-center space-x-4">
-            <a
-              href="https://prime-finish.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Project
-            </a>
-            <a
-              href="https://github.com/Marysgithub321/prime-finish"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center space-x-2"
-            >
-              <FaGithub />
-              <span>View Code</span>
-            </a>
-          </div>
-        </div>
-        {/* Project 5: Truss Estimator Application */}
-<div className="card mb-[50px]"> {/* Added bottom margin */}
-  <div className="aspect-ratio-box">
-    <img
-      src={Truss}
-      alt="Truss Estimator Application"
-      width="400"
-      height="300"
-      className="card-img"
-      loading="lazy"
-    />
-  </div>
-  <h2>Truss Estimator Application</h2>
-  <p>Calculates project costs and generates detailed PDF estimates.</p>
-  <div className="flex justify-center space-x-4">
-    <a
-      href="https://tru-span.vercel.app/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      View Project
-    </a>
-    <a
-      href="https://github.com/Marysgithub321/TruSpan"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center space-x-2"
-    >
-      <FaGithub />
-      <span>View Code</span>
-    </a>
-  </div>
-</div>
-
+        ))}
       </div>
     </section>
   );
 };
+
+// Project data array
+const projectData = [
+  {
+    title: "Tamale Order Tracker",
+    description:
+      "The Tamale Order Tracker app helps manage food orders easily, with the ability to print PDF lists for pickup.",
+    image: MyOrders,
+    projectLink: "https://tamale-app-desktop.vercel.app/",
+    codeLink: "https://github.com/Marysgithub321/tamale-app-desktop",
+  },
+  {
+    title: "Building Shops Estimator",
+    description:
+      "Helps contractors quickly calculate project costs and generate material lists.",
+    image: shopLogo,
+    projectLink: "https://solid-structure.vercel.app/",
+    codeLink: "https://github.com/Marysgithub321/SolidStructure",
+  },
+  {
+    title: "Portfolio Website",
+    description:
+      "Built with React and Tailwind CSS, showcasing projects and technical skills.",
+    image: MyLogo,
+    projectLink: "https://mpdev.ca/",
+    codeLink: "https://github.com/Marysgithub321/my-portfolio",
+  },
+  {
+    title: "Prime Finish Painting",
+    description:
+      "This app is for creating invoices, estimates, tracking job progress, managing expenses, and tracking contractor payments efficiently for a painting company.",
+    image: PrimeFinishLogo,
+    projectLink: "https://prime-finish.vercel.app/",
+    codeLink: "https://github.com/Marysgithub321/prime-finish",
+  },
+  {
+    title: "Truss Estimator Application",
+    description:
+      "Calculates project costs and generates detailed PDF estimates.",
+    image: Truss,
+    projectLink: "https://tru-span.vercel.app/",
+    codeLink: "https://github.com/Marysgithub321/TruSpan",
+  },
+];
 
 export default Projects;
