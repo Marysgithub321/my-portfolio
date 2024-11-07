@@ -2,8 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';  // Import AOS styles
-
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from '@vercel/analytics/react';  // Import Vercel Analytics
 
 import Home from './pages/Home';
 import AboutMe from './pages/AboutMe';
@@ -22,6 +21,9 @@ function App() {
 
   return (
     <Router>
+      {/* Vercel Analytics Component */}
+      <Analytics />  {/* Add Analytics here */}
+
       <div>
         {/* Navigation Menu */}
         <nav>
