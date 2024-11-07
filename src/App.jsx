@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';  // Import AOS styles
 
-import { Analytics } from '@vercel/analytics';  // Import Vercel Analytics
+import { Analytics } from "@vercel/analytics/react"
 
 import Home from './pages/Home';
 import AboutMe from './pages/AboutMe';
@@ -34,9 +34,6 @@ function App() {
           </ul>
         </nav>
         
-        {/* Vercel Analytics Component */}
-        <Analytics />  {/* This is the Vercel Analytics component */}
-
         {/* Routes */}
         <Routes>
           <Route path="/" element={<Home />} />
